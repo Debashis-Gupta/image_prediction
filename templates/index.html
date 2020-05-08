@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Predict Your Image</title>
+    <!-- bootstrap cdn -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- custom stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static',filename='css/main.css') }}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <!-- main area -->
+    <main class=".container-fluid img">
+
+        <!-- Heading -->
+        <header>
+            <section class="container">
+                <h1 class="text-header">Welcome</h1>
+                <h4 class="sub_text_header">To Predict Your Image</h4>
+            </section>
+        </header>
+        <!-- end of heading  -->
+
+        <section>
+            <h2 class="sub_text_header">{{ output }}</h2>
+        </section>
+        <!-- form -->
+        <section class="form_design">
+            <form action="/predict" method="POST" enctype="multipart/form-data">
+                <div class="row">
+                    <p class="predict_view">Please Upload Your File</p>
+                    <div class="col-lg-6 col-md-12 col-sm-12 align_button d-flex flex-row-reverse">
+                        <div class="upload-btn-wrapper">
+                            <p class="btn1">Click Here</p>
+                            <input type="file" name="img" />
+
+
+                          </div>
+                    </div>
+                    <div class="col-lg-6 col-md-12 col-sm-12 note2">
+
+                        <button type="submit" class="btn button secondary-button">Predict</button>
+                    </div>
+                </div>
+
+            </form>
+        </section>
+        <!-- end form -->
+        <!-- count -->
+        <section class="divider">
+            <div class="row">
+                <div class="col-lg-6 col-sm-12 views_one ">
+                    <img class="eyes_one" src="{{ url_for('static',filename='img/eye-solid.svg') }}" alt="">
+                    <p class="number_view counter">{{ total_view }}</p>
+                    <h2 class="views" >Total Views</h2>
+                </div>
+                <div class="col-lg-6 col-sm-12 views_two">
+                    <img class="eyes_two" src="{{ url_for('static',filename='img/smile.svg') }}" alt="">
+                    <p class="number_view counter">{{ total_predict }}</p>
+                    <h2 class="views" >Total Predicts</h2>
+                </div>
+
+            </div>
+        </section>
+        <!-- end count -->
+
+        <!-- footer -->
+        <footer class="container footer_design">
+            <div class="row note">
+               <span><strong>Please Note</strong> This classifier is build on imagenet dataset and inception v3 model. This app will accurately predict the labels provided by imagenet </span>
+            </div>
+            <div class="row copyright">
+                <span>All copyrights<strong>&copy;2020</strong> reserved to Debashis Gupta</span>
+             </div>
+        </footer>
+        <!-- end footer -->
+
+    </main>
+<!-- counter js -->
+
+<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+<script src="{{ url_for('static',filename='js/jquery.counterup.min.js') }}"></script>
+<script>
+    jQuery(document).ready(function( $ )
+    {
+        $('.counter').counterUp({
+            delay: 10,
+            time: 1000
+        });
+    });
+</script>
+</body>
+</html>

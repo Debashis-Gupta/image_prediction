@@ -1,0 +1,226 @@
+@import url('fonts.css')
+*{
+    margin: 0;
+    padding: 0;
+}
+.img{
+    background: url('/static/img/sunse.png') no-repeat;
+    background-size:100% 100% ;
+    overflow: hidden;
+    background-position: center;
+}
+.text-header{
+display:flex;
+justify-content:center;
+font-family: "Ruluko";
+font-size:40px;
+font-weight:bolder;
+gap:normal;
+line-height:48px;
+
+text-align:left;
+background :-webkit-linear-gradient(#F3219D 28%, #E1ABC4 61%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+
+.sub_text_header{
+    display: flex;
+    justify-content: center;
+    font-family: "Ruluko";
+    font-size: 28px;
+    font-weight: bolder;
+    gap: normal;
+    line-height: 48px;
+    text-align: left;
+    background: -webkit-linear-gradient(#e2ab12 41%, #a21bd1 66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+}
+
+/* designing form */
+
+.form_design{
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+}
+.upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+  
+  .btn1 {
+      
+    border: 2px solid black;
+    color: black;
+    background-color: transparent;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  .btn1:hover{
+    border: 2px solid transparent;
+    background: -webkit-linear-gradient(#e2ab12 41%, #a21bd1 66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent
+  }
+  .upload-btn-wrapper input[type=file] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+.align_button{
+    left: 20px;
+}
+  /* counts views */
+.views_one{
+    position: relative;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgba(76, 60, 102, 0.1);
+}
+.eyes_one{
+    /* position: absolute; */
+    width: 55px;
+    height: 57px;
+    mix-blend-mode: hard-light;
+
+}
+.eyes_two{
+    /* position: absolute; */
+    margin-left: 40px;
+    width: 55px;
+    height: 57px;
+    mix-blend-mode: hard-light;
+
+}
+
+.views{
+    font-family: 'Ruluko',cursive;
+}
+.views_two{
+    position: relative;
+    align-items: left;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgba(76, 60, 102, 0.1);
+}
+
+.divider{
+    margin-top: 4%;
+}
+
+/* footer */
+.footer_design{
+    margin-top:10%;
+    color: whitesmoke;
+    
+}
+.copyright{
+    display: flex;
+    justify-content:center;
+}
+.predict_view{
+    position: relative;
+   font-family: "Roboto";
+   font-style: italic;
+   font-weight: bold;
+   font-size: 40px;
+   line-height: 74px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   margin: 24px auto;
+   mix-blend-mode: hard-light;
+   }
+   .number_view{
+    position: relative;
+   /* width: 170px;
+   height: 71px; */
+   
+   
+   font-family: Roboto;
+   font-style: italic;
+   font-weight: bold;
+   font-size: 63px;
+   line-height: 74px;
+   display: flex;
+   align-items: center;
+   text-align: center;
+   margin: 24px;
+   /* margin: 24px auto; */
+   mix-blend-mode: hard-light;
+   }
+
+   /* media screen  */
+   @media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+      width: 51%;
+    }
+    .eyes_two{
+        margin-left: 73px;
+    }
+    .number_view{
+        background: -webkit-linear-gradient(#12acdb 55%, #a3efc2 66%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+        margin: 24px auto;
+    }
+    .views {
+        margin-left: 55px;
+    }
+    .note{
+        padding: 15px;
+    }
+    .note2{
+        margin-left: 100px;
+    }
+    .predict_view{
+        font-size: 27px;
+    }
+  }
+
+
+  /* design */
+ 
+.button{
+    padding: 0.8rem 2.2rem;
+    font: normal 500 16px/20px "Roboto";
+    position: relative;
+    border: 3px solid transparent;
+    border-radius: 4px;
+
+    /* font-weight: 500; */
+}
+.button.secondary-button{
+    background:#4f3f66;
+    background-clip: padding-box;
+    transition: background .8s ease-in;
+
+}
+.button.secondary-button:hover{
+    background:linear-gradient(90deg,#4458dc 0%,#854fee 100%);
+    color: whitesmoke;
+    box-shadow: 0px 10px 30px rgba(57,56,61,0.205);
+}
+
+.button .secondary-button::after{
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background:linear-gradient(90deg,#4458dc 0%,#854fee 100%);
+    content: "";
+    z-index: -1;
+    border-radius: 4px;
+}
